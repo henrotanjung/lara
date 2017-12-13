@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <title>Update - LaraClassified</title>
+    
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/skin-blue.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.png">
+</head>
+
+<body>
+
+<header class="site-header">
+    
+    <!-- Top navbar & branding -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            
+            <!-- Toggle buttons and brand -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                    <span class="glyphicon glyphicon-option-vertical"></span>
+                </button>
+                
+                <a class="navbar-brand" href="http://www.bedigit.com"><img src="assets/img/logo.png" alt="logo"></a>
+            </div>
+            <!-- END Toggle buttons and brand -->
+            
+            <!-- Top navbar -->
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="../index.html">Documentation</a></li>
+                    <li><a href="https://www.bedigit.com/kb/laraclassified/">Knowledge Base</a></li>
+                    <li><a href="https://www.bedigit.com/forums/">Support</a></li>
+                    <li class="hero"><a href="https://codecanyon.net/item/laraclassified-geo-classified-ads-cms/16458425?ref=BedigitCom">Purchase</a></li>
+                </ul>
+            </div>
+            <!-- END Top navbar -->
+        
+        </div>
+    </nav>
+    <!-- END Top navbar & branding -->
+
+</header>
+
+
+<main class="container">
+    <div class="row">
+        
+        <article class="col-md-12 main-content" role="main">
+            
+            <header>
+                <h1>Release 3.0</h1>
+                <p></p>
+                <ol class="toc">
+                    <li><a href="../changelog.html#v3.0">Changelog</a></li>
+                </ol>
+            </header>
+            
+            <section>
+                <h2 id="how-to-update">How to Update</h2>
+                
+                <p>IMPORTANT : Make a backup for your website (files and database) before making this update.</p>
+                
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace all files, <span style="color:red;">except the files below</span>:</li>
+                </ul>
+<pre>
+.env (file)
+storage/installed (file)
+public/.htaccess (file)
+public/assets/css/style/custom.css (file)
+public/uploads (folder)
+</pre>
+                <ul>
+                    <li>Add these new folders and their contents:</li>
+                </ul>
+<pre>
+public/uploads/app/default/
+public/uploads/app/ico/
+</pre>
+                <ul>
+                    <li>Open <code>routes/web.php</code> file</li>
+                    <li>Place this code in it (Before all other command lines, but after the PHP tag <code>&lt;?php</code>)</li>
+                </ul>
+<pre>
+Route::get('update', function () {
+    \File::deleteDirectory(app_path('Larapen/'));
+    \File::delete(base_path('gulpfile.js'));
+    \File::delete(base_path('package.json'));
+    \File::delete(base_path('phpspec.yml'));
+    \File::delete(base_path('phpunit.xml'));
+    
+    $updateSqlFile = storage_path('database/updates/from-2.9-to-3.0/update.sql');
+    if (file_exists($updateSqlFile)) {
+        $sql = file_get_contents($updateSqlFile);
+        $sql = str_replace('&lt;&lt;prefix&gt;&gt;', \DB::getTablePrefix(), $sql);
+        \DB::unprepared($sql);
+    }
+    
+    $exitCode = Artisan::call('view:clear');
+    
+    return 'Success';
+});
+</pre>
+                <ul>
+                    <li>Visit <code>yoursite.com/update</code> to migrate your website</li>
+                    <li>Remove the code after update.</li>
+                </ul>
+                <p>If you currently use PayPal, you need to set your PayPal parameters in the <code>/.env</code> file like this:</p>
+<pre>
+PAYPAL_MODE=live
+PAYPAL_USERNAME=your-paypal-username
+PAYPAL_PASSWORD=your-paypal-password
+PAYPAL_SIGNATURE=your-paypal-signature
+</pre>
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+            
+            </section>
+        
+        
+        </article>
+        <!-- END Main content -->
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+    
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2017. All right reserved</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <ul class="footer-menu">
+                    <li><a href="../changelog.html">Changelog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<script src="assets/js/theDocs.all.min.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>

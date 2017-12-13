@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <title>Update - LaraClassified</title>
+    
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/skin-blue.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.png">
+</head>
+
+<body>
+
+<header class="site-header">
+    
+    <!-- Top navbar & branding -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            
+            <!-- Toggle buttons and brand -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                    <span class="glyphicon glyphicon-option-vertical"></span>
+                </button>
+                
+                <a class="navbar-brand" href="http://www.bedigit.com"><img src="assets/img/logo.png" alt="logo"></a>
+            </div>
+            <!-- END Toggle buttons and brand -->
+            
+            <!-- Top navbar -->
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="../index.html">Documentation</a></li>
+                    <li><a href="https://www.bedigit.com/kb/laraclassified/">Knowledge Base</a></li>
+                    <li><a href="https://www.bedigit.com/forums/">Support</a></li>
+                    <li class="hero"><a href="https://codecanyon.net/item/laraclassified-geo-classified-ads-cms/16458425?ref=BedigitCom">Purchase</a></li>
+                </ul>
+            </div>
+            <!-- END Top navbar -->
+        
+        </div>
+    </nav>
+    <!-- END Top navbar & branding -->
+
+</header>
+
+
+<main class="container">
+    <div class="row">
+        
+        <article class="col-md-12 main-content" role="main">
+            
+            <header>
+                <h1>Release 2.8</h1>
+                <p></p>
+                <ol class="toc">
+                    <li><a href="../changelog.html#v2.8">Changelog</a></li>
+                </ol>
+            </header>
+            
+            <section>
+                <h2 id="how-to-update">How to Update</h2>
+    
+                <p>IMPORTANT : Make a backup for your website (files and database) before making this update.</p>
+    
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace all files (except the "public/uploads" folder).</li>
+                    <li>
+                        Or...
+                        <ul>
+                            <li>Replace (or add) these folders (Delete old folders and add the new)</li>
+                            <pre><code>app
+config
+packages
+resources/lang/en
+resources/lang/es
+resources/lang/fr
+resources/lang/vendor
+resources/views
+routes
+storage/database
+updates
+vendor</code></pre>
+                            <li>Replace (or add) these files</li>
+                            <pre><code>composer.json
+composer.lock</code></pre>
+                        </ul>
+                    </li>
+                    <li>Open <code>routes/web.php</code> file</li>
+                    <li>Place this code in it (Before all other command lines)</li>
+                </ul>
+                <pre><code class="php">Route::get('update', function () {
+    $updateSqlFile = storage_path('database/updates/from-2.7-to-2.8/update.sql');
+    if (file_exists($updateSqlFile)) {
+        $sql = file_get_contents($updateSqlFile);
+        $sql = str_replace('&lt;&lt;prefix&gt;&gt;', \DB::getTablePrefix(), $sql);
+        \DB::unprepared($sql);
+    }
+
+    return 'Success';
+});</code></pre>
+                <ul>
+                    <li>Visit <code>yoursite.com/update</code> to migrate your website</li>
+                    <li>Remove the code after update.</li>
+                </ul>
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+            
+            </section>
+        
+        
+        </article>
+        <!-- END Main content -->
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+    
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2017. All right reserved</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <ul class="footer-menu">
+                    <li><a href="../changelog.html">Changelog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<script src="assets/js/theDocs.all.min.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 30, 2017, 1:24:07 PM
+    Author     : tigernix
+*/
+
+.logo {    
+    position: relative;
+    display: inline;
+    margin-left: 50px;
+    top: -40px;
+    
+}
+
+#header {   
+    position: relative;
+    top: -10px;
+    margin-top: -10px;
+    margin-left: 60px;
+    font-family: Arial;
+    font-size: 50px;
+}
+
+#image-header {
+    position: relative;
+    top: -40px;
+    right: -70px;
+    border-radius: 50%;
+}
+
+span>img {
+    border-radius: 50%;
+    padding: 0px 0px;
+}
+
+#textlogo {
+    position: relative;
+    top: -55px;;
+    margin-left: 100px;
+}
+
+div + p {
+    display: inline;
+    margin-left: 170px;
+}
+
+.jumbotron{        
+    margin-bottom:1rem;
+    background-color:#eceeef;
+    border-radius:.3rem;
+    height: 180px;
+    
+}
+
+.jumbotron_ulangtahun{        
+    margin-bottom:1rem;
+    background-color:#eceeef;
+    border-radius:.3rem;
+    height: 100px;
+    
+}
+
+#search_input {
+    position: relative;
+    top: 9px;
+    left: -381px;
+    width: 400px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.image-view {
+    width: 100px;
+    height: 100px;
+}
+
+.image-view-custome {
+    position: relative;
+    right: -400px;
+/*    margin-right: 25px;*/
+    
+}
+
+#tambah-jemaat {
+    float: right;    
+}
+
+.tambah-jemaat {
+    display: inline;
+    position: relative;
+    top: 9px;
+    right: -1000px;
+    
+}
+
+.jemaat-baru {
+    display: inline;
+    position: relative;
+    top: 9px;
+    right: -620px;
+}
+.all-absensi {
+    display: inline;
+    position: relative;
+    top: 0px;
+    right: -650px;
+}
+.all-absensic {
+    display: inline;
+    position: relative;
+    top: 0px;
+    right: -10px;
+}
+
+
+.hari-ini-absensi {
+    display: inline;
+    position: relative;
+    top: 0px;
+    right: -440px;
+}
+.birthday {
+    display: inline;
+    position: relative;
+    top: 9px;
+    right: -620px;
+}
+
+/*.custom-table {
+    position: relative;
+    top: -60px;
+}*/
+
+#home {
+    position: relative;
+    top: -10px;
+    
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  
+  
+  #absensi * {
+    visibility: visible;
+  }
+  
+  #button_absensi * {
+      visibility: hidden;
+  }
+  
+  #body_absensi * {
+      visibility: hidden;
+  }
+  
+  #report_absensi {
+      visibility: hidden;
+  }
+  
+  #absensi {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+a>h1 {
+    font-size: 50px;
+}
+
+#select_month {
+    display: inline;
+    width: 150px;
+    margin-left: 350px;
+}
+
+.select_month {
+    display: inline;
+    width: 150px;
+    margin-left: 0px;
+}
+
+#search_ulang_tahun{
+    width: 100px;
+}
+
+.container_grafik {
+    width: 50%;
+    margin: 15px auto;
+}

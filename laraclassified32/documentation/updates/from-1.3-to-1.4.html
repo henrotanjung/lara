@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <title>Update - LaraClassified</title>
+    
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/skin-blue.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.png">
+</head>
+
+<body>
+
+<header class="site-header">
+    
+    <!-- Top navbar & branding -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            
+            <!-- Toggle buttons and brand -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                    <span class="glyphicon glyphicon-option-vertical"></span>
+                </button>
+                
+                <a class="navbar-brand" href="http://www.bedigit.com"><img src="assets/img/logo.png" alt="logo"></a>
+            </div>
+            <!-- END Toggle buttons and brand -->
+            
+            <!-- Top navbar -->
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="../index.html">Documentation</a></li>
+                    <li><a href="https://www.bedigit.com/kb/laraclassified/">Knowledge Base</a></li>
+                    <li><a href="https://www.bedigit.com/forums/">Support</a></li>
+                    <li class="hero"><a href="https://codecanyon.net/item/laraclassified-geo-classified-ads-cms/16458425?ref=BedigitCom">Purchase</a></li>
+                </ul>
+            </div>
+            <!-- END Top navbar -->
+        
+        </div>
+    </nav>
+    <!-- END Top navbar & branding -->
+
+</header>
+
+
+<main class="container">
+    <div class="row">
+        
+        <article class="col-md-12 main-content" role="main">
+            
+            <header>
+                <h1>Release 1.4</h1>
+                <p></p>
+                <ol class="toc">
+                    <li><a href="../changelog.html#v1.4.0">Changelog</a></li>
+                </ol>
+            </header>
+            
+            <section>
+                <h2 id="how-to-update-1.4.0">Release 1.4.0 - How to Update</h2>
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace these folders</li>
+                </ul>
+                <pre><code>app
+database/umpirsky
+packages/larapen</code></pre>
+    
+                <ul>
+                    <li>Replace these files</li>
+                </ul>
+                <pre><code>config/app.php
+readme.md</code></pre>
+    
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+                <p>NOTE: You are free to delete the folders and files below, which are development files (if exists):</p>
+                <ul>
+                    <li>/vendor/fzaninotto</li>
+                    <li>/vendor/phpunit</li>
+                    <li>/vendor/xethron</li>
+                    <li>/vendor/way</li>
+                    <li>/vendor/orangehill</li>
+                </ul>
+    
+    
+                <h2 id="how-to-update-1.4.1">Release 1.4.1 - How to Update</h2>
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace these folders</li>
+                </ul>
+                <pre><code>app
+database
+packages</code></pre>
+    
+                <ul>
+                    <li>Replace these files</li>
+                </ul>
+                <pre><code>config/app.php
+config/elfinder.php
+readme.md</code></pre>
+    
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+    
+    
+                <h2 id="how-to-update-1.4.2">Release 1.4.2 - How to Update</h2>
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace these folders</li>
+                </ul>
+                <pre><code>database/sql/data/geonames
+resources/views/classified/ad/details
+resources/views/classified/layouts
+resources/views/errors/layouts</code></pre>
+    
+                <ul>
+                    <li>Replace these files</li>
+                </ul>
+                <pre><code>app/Larapen/Models/User.php
+app/Http/Controllers/Account/AdsController.php
+config/app.php
+public/.htaccess
+public/robots.https.txt (new)
+.env.example
+readme.md</code></pre>
+    
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+    
+    
+                <h2 id="how-to-update-1.4.3">Release 1.4.3 - How to Update</h2>
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace these files</li>
+                </ul>
+                <pre><code>packages/backpack/base/src/app/Http/Controllers/Controller.php
+packages/backpack/base/src/app/Http/Controllers/Auth/PasswordController.php
+app/Larapen/Models/User.php
+app/Http/Controllers/Admin/UserController.php
+app/Http/Controllers/Auth/LoginController.php
+app/Http/Controllers/Auth/SignupController.php
+app/Exceptions/Handler.php
+config/app.php
+readme.md</code></pre>
+    
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+    
+    
+                <h2 id="how-to-update-1.4.4">Release 1.4.4 - How to Update</h2>
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace these files</li>
+                </ul>
+                <pre><code>app/Http/Controllers/Auth/SignupController.php
+app/Http/Controllers/Auth/SocialController.php
+config/app.php
+database/seeds/PacksTableSeeder.php
+database/seeds/PaymentMethodsTableSeeder.php
+database/sql/data/required/app-data.sql
+public/assets/css/flags/flags.css
+resources/lang/en/global.php
+resources/lang/en/mail.php
+resources/lang/es/mail.php
+resources/lang/fr/mail.php
+resources/views/classified/ad/post/index.blade.php
+resources/views/emails/ad/activation.blade.php
+readme.md</code></pre>
+    
+                <ul>
+                    <li>Add these files</li>
+                </ul>
+                <pre><code>vendor/nesbot/carbon/src/Carbon/Lang/si.php</code></pre>
+                <ul>
+                    <li>Update your database<br>
+                        Please update the ‘active’ column of the ’payment_methods’ table entry with value 1 (from your phpMyAdmin).
+                        Or please execute the SQL code below in your phpMyAdmin:</li>
+                </ul>
+                <pre><code>TRUNCATE TABLE `payment_methods`;
+
+INSERT INTO `payment_methods` (`id`, `country_code`, `name`, `description`, `lft`, `rgt`, `depth`, `active`) VALUES
+(1, NULL, 'Paypal', 'Paypal Express', NULL, NULL, NULL, 1);</code></pre>
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+    
+    
+                <h2 id="how-to-update-1.4.5">Release 1.4.5 - How to Update</h2>
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace these folders</li>
+                </ul>
+                <pre><code>resources/lang/en
+resources/lang/es
+resources/lang/fr</code></pre>
+    
+                <ul>
+                    <li>Replace these files</li>
+                </ul>
+                <pre><code>app/Http/Controllers/Ad/DetailsController.php
+config/app.php
+readme.md
+resources/views/classified/layouts/inc/header.blade.php</code></pre>
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+    
+    
+                <h2 id="how-to-update-1.4.6">Release 1.4.6 - How to Update</h2>
+                <ul>
+                    <li>Login to your FTP account</li>
+                    <li>Replace these files</li>
+                </ul>
+                <pre><code>app/Http/Controllers/Ad/PostController.php
+app/Http/Controllers/Ad/UpdateController.php
+app/Http/Controllers/Admin/AdController.php
+app/Http/Controllers/SearchController.php
+config/app.php
+public/assets/js/app/d.select.category.js
+readme.md
+resources/views/classified/ad/post/index.blade.php
+resources/views/classified/ad/update/index.blade.php
+resources/views/classified/auth/login.blade.php
+resources/views/classified/auth/signup/index.blade.php
+resources/views/classified/search/inc/categories.blade.php</code></pre>
+    
+                <ul>
+                    <li>Or you can replace all LaraClassified files (except the "public/uploads" folder).</li>
+                </ul>
+    
+                <ul>
+                    <li>You are done.</li>
+                </ul>
+            
+            </section>
+        
+        
+        </article>
+        <!-- END Main content -->
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+    
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2017. All right reserved</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <ul class="footer-menu">
+                    <li><a href="../changelog.html">Changelog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<script src="assets/js/theDocs.all.min.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>
